@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen-iOS Portal</title>
+    <!-- Google Fonts for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    backdropBlur: {
+                        '40px': '40px',
+                        '60px': '60px',
+                    },
+                    boxShadow: {
+                        'depth': '0 24px 48px -12px rgba(0,0,0,0.08)',
+                        'inner-soft': 'inset 0 2px 4px rgba(0,0,0,0.05)',
+                    },
+                    borderColor: {
+                        'white-60': 'rgba(255,255,255,0.6)',
+                        'gray-200-40': 'rgba(209,213,219,0.4)',
+                    },
+                    backgroundColor: {
+                        'white-40': 'rgba(255,255,255,0.4)',
+                        'white-60': 'rgba(255,255,255,0.6)',
+                        'gray-100-50': 'rgba(243,244,246,0.5)',
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom active scale for tactile feedback */
+        .btn-active:active {
+            transform: scale(0.98);
+        }
+        /* Hover effects */
+        .btn-hover:hover {
+            backdrop-filter: blur(24px); /* Equivalent to 3xl blur */
+            border-color: rgba(255,255,255,0.7); /* Slight brightness adjust */
+        }
+    </style>
+</head>
+<body class="bg-[#F2F2F7] min-h-screen flex items-center justify-center antialiased">
+    <!-- Main Container: Frosted glass panel with depth -->
+    <div class="relative w-full max-w-md p-8 rounded-[40px] bg-[rgba(255,255,255,0.4)] backdrop-blur-[40px] shadow-depth border border-white-60 border-outer border-gray-200-40">
+        <!-- Inner Shadow for etched feel -->
+        <div class="absolute inset-0 rounded-[40px] shadow-inner-soft bg-gray-100-50 pointer-events-none"></div>
+        
+        <!-- Title: Extrabold, tracking-tight -->
+        <h1 class="text-center text-3xl font-extrabold tracking-tight text-[#1C1C1E] mb-10 uppercase">Portal Hub</h1>
+        
+        <!-- Buttons Container: Modular stacking with breathing space -->
+        <div class="space-y-6">
+            <!-- X Button: Primary dark, high contrast -->
+            <a href="https://x.com" class="flex items-center justify-center gap-2 px-6 py-4 rounded-[28px] bg-[#1C1C1E] text-white font-bold text-lg uppercase tracking-widest shadow-depth border border-white-60 border-outer border-gray-200-40 transition-all duration-200 btn-hover btn-active hover:bg-[#2C2C2E]">
+                <i data-lucide="twitter" class="w-5 h-5 stroke-2 stroke-current"></i> <!-- Using Lucide twitter icon as proxy for X -->
+                <span class="text-[10px] font-bold">Enter X</span>
+            </a>
+            
+            <!-- Pornhub Button: Secondary white with projection -->
+            <a href="https://www.pornhub.com" class="flex items-center justify-center gap-2 px-6 py-4 rounded-[28px] bg-white text-[#1C1C1E] font-bold text-lg uppercase tracking-widest shadow-depth border border-white-60 border-outer border-gray-200-40 transition-all duration-200 btn-hover btn-active hover:bg-gray-50">
+                <i data-lucide="video" class="w-5 h-5 stroke-2 stroke-current"></i> <!-- Generic video icon for Pornhub -->
+                <span class="text-[10px] font-bold">Enter Pornhub</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
